@@ -93,7 +93,25 @@ $("#title").css("font-size",`${random}px`)
 $('ol').append('<li>Today is Monday</li>')
 
 //5.
+$('ol').remove();
+$('h4').append('<p>Sorry for the list</p>')
 
+//6.
+console.log($('input.form-control'))
+let inputList = $('input')
+
+
+$('input.form-control').on("change", function () {
+  let red = $('input.form-control').eq(0).val();
+  let blue = $('input.form-control').eq(1).val();
+  let green = $('input.form-control').eq(2).val();
+$('body').css('background-color', `rgb(${red},${green},${blue})`)
+  })
+
+//7.
+$('.container').on('click', "img", function () {
+  $('img').remove();
+})
 
 </script>
 </body>
