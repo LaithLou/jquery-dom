@@ -20,5 +20,23 @@
     $("<form>").appendTo('#container');
     $(`<input type="text" placeholder='Movie title'>`).appendTo('form')
     $(`<input type="text" placeholder='Movie Rating'>`).appendTo('form')
+    $(`<input id=submit type="button" value="submit">`).appendTo('form')
+    $('<div id="display">').appendTo('#container')
+    $('<ul id=list>').appendTo("#display")
+
+    $('#submit').on('click',function(){
+      let movieTitle = $('input').eq(0).val()
+      let movieRating = $('input').eq(1).val()
+      $('<li class= "item">').text(`name : ${movieTitle}, Rating: ${movieRating}`).appendTo('#list')
+    })
+
+    $('#submit').on('click',function(){
+    let $delete = $(`<input id="delete" type="button" value="delete">`)
+      $($delete).append('li')
+    })
+
+    $('ul').on('click','.item',function(){
+      $('li').remove()
+    })
 
     </script>
